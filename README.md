@@ -12,8 +12,8 @@ Track expenses, set budgets, and visualize your finances — all in one simple w
 - Fully responsive design
 
 ##  Screenshot
-![Dashboad](Dashboard.png)
-[Summary](Summary.png)
+![Dashboad](Dashboard.PNG)
+[Summary](Summary.PNG)
 
 
 ##  How to Use
