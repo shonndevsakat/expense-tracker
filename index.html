@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="summary.html" id="summary-link">Summary</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌙</button>
+    </nav>
+    <h1>Personal Finance Tracker</h1>
+    <div class="balance">
+      <h2>Balance: <span id="balance">₹0.00</span></h2>
+    </div>
+    <form id="transaction-form">
+      <input type="text" id="desc" placeholder="Description" required>
+      <input type="number" id="amount" placeholder="Amount" required>
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <select id="category">
+        <option value="General">General</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Salary">Salary</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="date" id="date" required>
+      <label style="font-size:0.95rem; margin-left:0.5rem;">
+        <input type="checkbox" id="recurring"> Recurring
+      </label>
+      <button type="submit">Add Transaction</button>
+    </form>
+    <div style="margin-bottom:1rem; display:flex; gap:0.5rem; align-items:center;">
+      <input type="number" id="budget" placeholder="Set Budget Limit (₹)" style="flex:1; padding:0.5rem; border-radius:6px; border:1px solid #dbeafe;">
+      <button id="set-budget" style="padding:0.5rem 1rem; border-radius:6px; border:none; background:#5a189a; color:#fff; font-weight:bold; cursor:pointer;">Set</button>
+      <span id="budget-status" style="margin-left:1rem; font-weight:bold;"></span>
+    </div>
+    <div style="margin-bottom:1rem; display:flex; gap:0.5rem; align-items:center;">
+      <input type="text" id="search" placeholder="Search transactions..." style="flex:1; padding:0.5rem; border-radius:6px; border:1px solid #dbeafe;">
+      <select id="filter-category" style="padding:0.5rem; border-radius:6px; border:1px solid #dbeafe;">
+        <option value="all">All Categories</option>
+        <option value="General">General</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Salary">Salary</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="filters" style="margin-bottom:1rem; text-align:center;">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="income">Income</button>
+      <button class="filter-btn" data-filter="expense">Expense</button>
+    </div>
+    <ul id="transactions"></ul>
+    <div style="margin-top:2rem; text-align:center; color:#888; font-size:0.95rem;">
+      <b>Tip:</b> Add your income as a transaction, then add expenses. Your balance will update automatically!
+    </div>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Summary</h1>
+    <div style="margin-bottom:2rem; text-align:center;">
+      <a href="index.html" style="display:inline-block; background:linear-gradient(90deg,#5a189a 60%,#f72585 100%); color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.6rem 1.5rem; font-size:1.05rem; box-shadow:0 2px 8px rgba(44,62,80,0.08); text-decoration:none; transition:background 0.2s,transform 0.2s;">&#8592; Back to Tracker</a>
+    </div>
+    <canvas id="summaryChart" width="350" height="200"></canvas>
+    <div id="summaryDetails" style="margin-top:2rem;"></div>
+  </div>
+  <script>
+    // Get transactions from localStorage
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    let totalIncome = 0, totalExpense = 0;
+    transactions.forEach(t => {
+      if (t.type === 'income') totalIncome += t.amount;
+      else totalExpense += t.amount;
+    });
+    // Circular (doughnut) chart for income vs expense
+    const ctx = document.getElementById('summaryChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Income', 'Expense'],
+        datasets: [{
+          data: [totalIncome, totalExpense],
+          backgroundColor: ['#2ecc71', '#e74c3c'],
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+    // Details
+    document.getElementById('summaryDetails').innerHTML = `
+      <h3>Total Income: <span style="color:#2ecc71">₹${totalIncome.toLocaleString('en-IN', {minimumFractionDigits:2})}</span></h3>
+      <h3>Total Expense: <span style="color:#e74c3c">₹${totalExpense.toLocaleString('en-IN', {minimumFractionDigits:2})}</span></h3>
+      <h2 style="margin-top:1.5rem;">Net Balance: <span style="color:#5a189a">₹${(totalIncome-totalExpense).toLocaleString('en-IN', {minimumFractionDigits:2})}</span></h2>
+    `;
+  </script>
+</body>
+</html>
