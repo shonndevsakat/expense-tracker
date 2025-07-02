@@ -13,7 +13,7 @@ Track expenses, set budgets, and visualize your finances — all in one simple w
 
 ##  Screenshot
 ![Dashboad](Dashboard.PNG)
-[Summary](Summary.PNG)
+![Summary](Summary.PNG)
 
 
 ##  How to Use
@@ -27,6 +27,3 @@ summary.html – Summary page
 style.css – Styling
 script.js – Functionality
 
-Created by Shonndev Sakat
-
-Pull requests and feedback are welcome!
