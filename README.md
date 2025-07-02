@@ -10,6 +10,12 @@ Track expenses, set budgets, and visualize your finances — all in one simple w
 - Summary with doughnut chart
 - Light/Dark mode toggle
 - Fully responsive design
+  
+## Tech Stack
+- HTML
+- CSS
+- Javacript
+
 
 ##  Screenshot
 ![Dashboad](Dashboard.PNG)
@@ -29,6 +35,7 @@ style.css – Styling
 script.js – Functionality
 
 ```
+## Author
 Created by Shonndev Sakat
 
 Pull requests and feedback are welcome!
