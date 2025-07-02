@@ -16,6 +16,7 @@ Track expenses, set budgets, and visualize your finances — all in one simple w
 ![Summary](Summary.PNG)
 
 
+
 ##  How to Use
 ```bash
 git clone https://github.com/yourusername/personal-finance-tracker.git
@@ -26,4 +27,9 @@ index.html – Main UI
 summary.html – Summary page
 style.css – Styling
 script.js – Functionality
+
+```
+Created by Shonndev Sakat
+
+Pull requests and feedback are welcome!
 
