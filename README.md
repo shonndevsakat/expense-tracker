@@ -27,7 +27,6 @@ summary.html – Summary page
 style.css – Styling
 script.js – Functionality
 
-## Author
 Created by Shonndev Sakat
 
 Pull requests and feedback are welcome!
